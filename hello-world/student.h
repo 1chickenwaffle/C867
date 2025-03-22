@@ -18,6 +18,19 @@ private:
     DegreeProgram degreeProgram; //enum degree program that contains 3 attribute
     
 public:
+    //default constructor
+    Student(){
+        StudentID = 0;
+        FirstName = "";
+        LastName = "";
+        EmailAddress = "";
+        Age = 0;
+        for(int i = 0; i < DaysToCompleteEachCourseArraySize; i++){
+            DaysToCompleteEachCourse[i] = 0;
+        }
+        degreeProgram = UNDECIDE;
+    }
+    
     //constructor using all the input paramenters
     Student(int studentID, string firstName, string lastName, string emailAddress, int age, int daysToCompleteEachCourse[], DegreeProgram degree_program){
         StudentID = studentID;
