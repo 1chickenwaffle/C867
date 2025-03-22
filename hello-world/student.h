@@ -15,34 +15,13 @@ private:
     string EmailAddress;
     int Age;
     int DaysToCompleteEachCourse [DaysToCompleteEachCourseArraySize]; // array of number of days to complete each course
-    DegreeProgram degreeProgram; //enum degree program that contains 3 attribute
+    DegreeProgram degreeProgram; //enum degree program that contains 4 attribute
     
 public:
-    //default constructor
-    Student(){
-        StudentID = 0;
-        FirstName = "";
-        LastName = "";
-        EmailAddress = "";
-        Age = 0;
-        for(int i = 0; i < DaysToCompleteEachCourseArraySize; i++){
-            DaysToCompleteEachCourse[i] = 0;
-        }
-        degreeProgram = UNDECIDE;
-    }
-    
+    //constructor with dafault value
+    Student();
     //constructor using all the input paramenters
-    Student(int studentID, string firstName, string lastName, string emailAddress, int age, int daysToCompleteEachCourse[], DegreeProgram degree_program){
-        StudentID = studentID;
-        FirstName = firstName;
-        LastName = lastName;
-        EmailAddress = emailAddress;
-        Age = age;
-        for(int i = 0; i < DaysToCompleteEachCourseArraySize; i++){
-            DaysToCompleteEachCourse[i] = daysToCompleteEachCourse[i];
-        }
-        degreeProgram = degree_program;
-    }
+    Student(int studentID, string firstName, string lastName, string emailAddress, int age, int daysToCompleteEachCourse[], DegreeProgram degree_program);
 
     
     
