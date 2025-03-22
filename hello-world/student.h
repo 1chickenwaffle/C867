@@ -24,65 +24,31 @@ public:
     Student(int studentID, string firstName, string lastName, string emailAddress, int age, int daysToCompleteEachCourse[], DegreeProgram degree_program);
 
     
-    
-    //getter and setter definition of each variable of Student classs
-    void setStudentID(int studentID){
-        StudentID = studentID;
-    }
-    
-    int getStudentID(){
-        return StudentID;
-    }
-    
-    void setFirstname(string firstName){
-        FirstName = firstName;
-    }
-    
-    string getFirstName (){
-        return FirstName;
-    }
-    
-    void setLastname(string lastName){
-        LastName = lastName;
-    }
-    
-    string getLastName (){
-        return LastName;
-    }
-    
-    void setEmailAddress(string emailAddress){
-        EmailAddress = emailAddress;
-    }
-    
-    string getEmailAddress(){
-        return EmailAddress;
-    }
-    
-    void setAge(int age){
-        Age = age;
-    }
-    
-    int getAge(){
-        return Age;
-    }
-    
-    void setDaysToCompleteEachCourse(int DaysToCompleteEachCourse[]){
-        for(int i = 0; i < DaysToCompleteEachCourseArraySize; i++){
-           this->DaysToCompleteEachCourse[i] =DaysToCompleteEachCourse[i];
-        }
-    }
-    
-    int getSetDaysToCompleteEachCourse(int index){
-        return DaysToCompleteEachCourse[index];
-    }
-    
-    void setDegreeProgram(DegreeProgram programType){
-        this->degreeProgram = programType;
-    }
-    
-    DegreeProgram getDegreeProgram(){
-        return degreeProgram;
-    }
+
+    //getter and setter declaration for each variable of Student class
+    void setStudentID(int studentID);
+    int getStudentID();
+
+    void setFirstname(string firstName);
+    string getFirstName ();
+
+    void setLastname(string lastName);
+    string getLastName ();
+
+    void setEmailAddress(string emailAddress);
+    string getEmailAddress();
+
+    void setAge(int age);
+    int getAge();
+
+    void setDaysToCompleteEachCourse(int DaysToCompleteEachCourse[]);
+    int getSetDaysToCompleteEachCourse(int index);
+
+    void setDegreeProgram(DegreeProgram programType);
+    DegreeProgram getDegreeProgram();
+
     
     
+    
+    void print();
 };
