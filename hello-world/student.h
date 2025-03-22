@@ -25,7 +25,7 @@ public:
 
     
     
-    //getter and setter
+    //getter and setter definition of each variable of Student classs
     void setStudentID(int studentID){
         StudentID = studentID;
     }
@@ -50,7 +50,7 @@ public:
         return LastName;
     }
     
-    void SetEmailAddress(string emailAddress){
+    void setEmailAddress(string emailAddress){
         EmailAddress = emailAddress;
     }
     
@@ -66,6 +66,23 @@ public:
         return Age;
     }
     
+    void setDaysToCompleteEachCourse(int DaysToCompleteEachCourse[]){
+        for(int i = 0; i < DaysToCompleteEachCourseArraySize; i++){
+           this->DaysToCompleteEachCourse[i] =DaysToCompleteEachCourse[i];
+        }
+    }
     
-    ;
+    int getSetDaysToCompleteEachCourse(int index){
+        return DaysToCompleteEachCourse[index];
+    }
+    
+    void setDegreeProgram(DegreeProgram programType){
+        this->degreeProgram = programType;
+    }
+    
+    DegreeProgram getDegreeProgram(){
+        return degreeProgram;
+    }
+    
+    
 };
