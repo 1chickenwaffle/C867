@@ -1,4 +1,6 @@
 #include "student.h"
+#include "roster.h"
+#include "degree.h"
 #include <iostream>
 
 // constructor definition
@@ -88,13 +90,22 @@ DegreeProgram Student::getDegreeProgram(){
 }
 
 
+//requirement format: A1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20 [tab]daysInCourse: {35, 40, 55} Degree Program: Security.
 void Student::print(){
     cout << this->getStudentID() << " \t ";
-    cout << this->getFirstName() << " \t ";
-    cout << this->getLastName() << "\t ";
-    cout << this->getEmailAddress() << " \t ";
-    cout << this->getAge() << " \t ";
-    cout << this->getDaysToCompleteEachCourse() << " \t ";
-    //cout << this->degreeProgram << " \t ";
+    cout <<"First Name: "<< this->getFirstName() << " \t ";
+    cout <<"Last Name: "<< this->getLastName() << "\t ";
+//cout <<"Age: "<< this->getEmailAddress() << " \t "; //requirement format doesn't say need to print out email
+    cout <<"Age: "<< this->getAge() << " \t ";
+    int* daysArray = this->getDaysToCompleteEachCourse();
+        cout <<"daysInCourse: {"
+             << daysArray[0] << ", "
+             << daysArray[1] << ", "
+             << daysArray[2]
+             << "} ";
+    cout<<"Degree Program: " <<degreeProgramString[ this->degreeProgram]<< "."<<endl;
+
 }
+
+
 

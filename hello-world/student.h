@@ -1,3 +1,4 @@
+#pragma once
 #include <string>
 #include "degree.h"
 using namespace std;
@@ -47,8 +48,6 @@ public:
     void setDegreeProgram(DegreeProgram programType);
     DegreeProgram getDegreeProgram();
 
-    
-    
-    
+    //format: A1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20 [tab]daysInCourse: {35, 40, 55} Degree Program: Security.
     void print();
 };

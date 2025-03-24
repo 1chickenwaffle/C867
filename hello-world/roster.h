@@ -3,32 +3,19 @@
 
 class Roster{
 public:
+    int studentIndex = 0;
     const static int numStudent = 5;
     Student* classRosterArray[numStudent];
 
 void parse(string studentData);
+void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram);
     
-    
+void printALL();
 };
 
 
-//  Create a student object for each student in the data table and populate classRosterArray.
-
-    //a.  Parse each set of data identified in the “studentData Table.”
-    //b.  Add each student object to classRosterArray.
 
 
-
-
-
-
-
-
-
-///3.  Define the following functions:
-
-//a.  public void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram)that sets the instance variables from part D1 and updates the roster.
-//
 
 //b.  public void remove(string studentID)  that removes students from the roster by student ID. If the student ID does not exist, the function prints an error message indicating that the student was not found.
 //

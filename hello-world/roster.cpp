@@ -1,12 +1,14 @@
 #include "roster.h"
+#include "student.h"
+#include "degree.h"
 
 //parse student Data, one at a time
-void parse(string studentData){
+void Roster::parse(string studentData){
     //extract data until next comma
     
     //extract student id
     int rhs = studentData.find(",");
-    string id = studentData.substr(0, rhs -1);
+    string id = studentData.substr(0, rhs);
     
     //extract first name
     int lhs = rhs + 1;
@@ -31,13 +33,13 @@ void parse(string studentData){
     //extract number of days to complete 3 course in string type then convert to int
     lhs = rhs + 1;
     rhs = studentData.find(",",lhs);
-    int day1 = stoi(studentData.substr(lhs, rhs-lhs));
+    int course1 = stoi(studentData.substr(lhs, rhs-lhs));
     lhs = rhs + 1;
     rhs = studentData.find(",",lhs);
-    int day2 = stoi(studentData.substr(lhs, rhs-lhs));
+    int course2 = stoi(studentData.substr(lhs, rhs-lhs));
     lhs = rhs + 1;
     rhs = studentData.find(",",lhs);
-    int day3 = stoi(studentData.substr(lhs, rhs-lhs));
+    int course3 = stoi(studentData.substr(lhs, rhs-lhs));
     
     //extract degree, compare string to SECURITY/NETWORK/SOFTWARE then assign to dprogram
     DegreeProgram dprogram = UNDECIDE;//default value
@@ -52,5 +54,19 @@ void parse(string studentData){
         dprogram = SOFTWARE;
     }
     
-    
+    add(id, firstName, lastName, email,age,course1,course2,course2,dprogram);
 };
+
+void Roster::add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram){
+    int daysInCourseArray [3] = {daysInCourse1,daysInCourse2,daysInCourse3};
+    if(studentIndex < numStudent){
+        classRosterArray[studentIndex] = new Student (studentID,firstName,lastName,emailAddress,age,daysInCourseArray,degreeProgram);
+        studentIndex++;
+    }
+};
+
+void Roster::printALL(){
+    for(int i = 0; i <numStudent; i++){
+        classRosterArray[i]->print();
+    }
+}
