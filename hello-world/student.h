@@ -9,7 +9,7 @@ class Student {
 public:
     const static int DaysToCompleteEachCourseArraySize = 3;
 private:
-    int StudentID;
+    string StudentID;
     string FirstName;
     string LastName;
     string EmailAddress;
@@ -21,13 +21,13 @@ public:
     //constructor with dafault value
     Student();
     //constructor using all the input paramenters
-    Student(int studentID, string firstName, string lastName, string emailAddress, int age, int daysToCompleteEachCourse[], DegreeProgram degree_program);
+    Student(string studentID, string firstName, string lastName, string emailAddress, int age, int daysToCompleteEachCourse[], DegreeProgram degree_program);
 
     
 
     //getter and setter declaration for each variable of Student class
-    void setStudentID(int studentID);
-    int getStudentID();
+    void setStudentID(string studentID);
+    string getStudentID();
 
     void setFirstname(string firstName);
     string getFirstName ();

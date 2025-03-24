@@ -3,7 +3,7 @@
 
 // constructor definition
 Student::Student(){
-    StudentID = 0;
+    StudentID = "";
     FirstName = "";
     LastName = "";
     EmailAddress = "";
@@ -15,7 +15,7 @@ Student::Student(){
 }
 
 //full constructor definition
-Student::Student(int studentID, string firstName, string lastName, string emailAddress, int age, int daysToCompleteEachCourse[], DegreeProgram degree_program){
+Student::Student(string studentID, string firstName, string lastName, string emailAddress, int age, int daysToCompleteEachCourse[], DegreeProgram degree_program){
     StudentID = studentID;
     FirstName = firstName;
     LastName = lastName;
@@ -29,11 +29,11 @@ Student::Student(int studentID, string firstName, string lastName, string emailA
 
 
 //getter and setter definition of each variable of Student classs
-void Student::setStudentID(int studentID){
+void Student::setStudentID(string studentID){
     StudentID = studentID;
 }
 
-int Student::getStudentID(){
+string Student::getStudentID(){
     return StudentID;
 }
 
