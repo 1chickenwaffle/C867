@@ -42,7 +42,7 @@ public:
     int getAge();
 
     void setDaysToCompleteEachCourse(int DaysToCompleteEachCourse[]);
-    int getSetDaysToCompleteEachCourse(int index);
+    int* getDaysToCompleteEachCourse();
 
     void setDegreeProgram(DegreeProgram programType);
     DegreeProgram getDegreeProgram();

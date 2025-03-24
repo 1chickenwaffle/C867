@@ -1,4 +1,5 @@
 #include "student.h"
+#include <iostream>
 
 // constructor definition
 Student::Student(){
@@ -13,7 +14,7 @@ Student::Student(){
     degreeProgram = UNDECIDE;
 }
 
-//constructor using all the input paramenter
+//full constructor definition
 Student::Student(int studentID, string firstName, string lastName, string emailAddress, int age, int daysToCompleteEachCourse[], DegreeProgram degree_program){
     StudentID = studentID;
     FirstName = firstName;
@@ -26,25 +27,74 @@ Student::Student(int studentID, string firstName, string lastName, string emailA
     degreeProgram = degree_program;
 }
 
-//getter and setter declaration for each variable of Student class
-void setStudentID(int studentID);
-int getStudentID();
 
-void setFirstname(string firstName);
-string getFirstName ();
+//getter and setter definition of each variable of Student classs
+void Student::setStudentID(int studentID){
+    StudentID = studentID;
+}
 
-void setLastname(string lastName);
-string getLastName ();
+int Student::getStudentID(){
+    return StudentID;
+}
 
-void setEmailAddress(string emailAddress);
-string getEmailAddress();
+void Student::setFirstname(string firstName){
+    FirstName = firstName;
+}
 
-void setAge(int age);
-int getAge();
+string Student::getFirstName (){
+    return FirstName;
+}
 
-void setDaysToCompleteEachCourse(int DaysToCompleteEachCourse[]);
-int getSetDaysToCompleteEachCourse(int index);
+void Student::setLastname(string lastName){
+    LastName = lastName;
+}
 
-void setDegreeProgram(DegreeProgram programType);
-DegreeProgram getDegreeProgram();
+string Student::getLastName (){
+    return LastName;
+}
+
+void Student::setEmailAddress(string emailAddress){
+    EmailAddress = emailAddress;
+}
+
+string Student::getEmailAddress(){
+    return EmailAddress;
+}
+
+void Student::setAge(int age){
+    Age = age;
+}
+
+int Student::getAge(){
+    return Age;
+}
+
+void Student::setDaysToCompleteEachCourse(int DaysToCompleteEachCourse[]){
+    for(int i = 0; i < DaysToCompleteEachCourseArraySize; i++){
+       this->DaysToCompleteEachCourse[i] =DaysToCompleteEachCourse[i];
+    }
+}
+
+int* Student::getDaysToCompleteEachCourse(){
+    return DaysToCompleteEachCourse;
+}
+
+void Student::setDegreeProgram(DegreeProgram programType){
+    this->degreeProgram = programType;
+}
+
+DegreeProgram Student::getDegreeProgram(){
+    return degreeProgram;
+}
+
+
+void Student::print(){
+    cout << this->getStudentID() << " \t ";
+    cout << this->getFirstName() << " \t ";
+    cout << this->getLastName() << "\t ";
+    cout << this->getEmailAddress() << " \t ";
+    cout << this->getAge() << " \t ";
+    cout << this->getDaysToCompleteEachCourse() << " \t ";
+    //cout << this->degreeProgram << " \t ";
+}
 
