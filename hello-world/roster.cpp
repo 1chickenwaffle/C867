@@ -1,7 +1,7 @@
 #include "roster.h"
 #include "student.h"
 #include "degree.h"
-
+#include <iostream>;
 //parse student Data, one at a time
 void Roster::parse(string studentData){
     //extract data until next comma
@@ -70,3 +70,22 @@ void Roster::printALL(){
         classRosterArray[i]->print();
     }
 }
+
+void Roster::remove(string studentID){
+    bool studentExist = false;
+    int studentIDnum = stoi(studentID.substr(1,1)); // get the number after A in student ID
+    for(int i = 0; i < numStudent; i++){
+        string tempStudentID = classRosterArray[i]->getStudentID();
+        if(tempStudentID == studentID){
+            studentExist = true;
+            delete classRosterArray[studentIDnum-1];
+            cout <<"Student "<< studentID << " has been removed." << endl;
+        }
+    }
+    if (!studentExist) {
+        cout << "error: Student  " << studentID << " is not found." << endl;
+    }
+    
+};
+
+

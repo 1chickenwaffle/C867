@@ -103,7 +103,7 @@ void Student::print(){
              << daysArray[1] << ", "
              << daysArray[2]
              << "} ";
-    cout<<"Degree Program: " <<degreeProgramString[ this->degreeProgram]<< "."<<endl;
+    cout<<"Degree Program: " << degreeProgramString[this->degreeProgram] << "."<<endl;
 
 }
 
