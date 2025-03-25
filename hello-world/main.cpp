@@ -26,22 +26,19 @@ int main(){
 
     cout << "test printALL() function" << endl;
     roster.printALL();
-//The printAll() function should loop through all the students in classRosterArray and call the print() function for each student.
-//A1 [tab] First Name: John [tab] Last Name: Smith [tab] Age: 20 [tab]daysInCourse: {35, 40, 55} Degree Program: Security.
-// function output:
-//    A1      First Name: John      Last Name: Smith     Age: 20      daysInCourse: {30, 35, 35} Degree Program: SECURITY.
-//    A2      First Name: Suzan      Last Name: Erickson     Age: 19      daysInCourse: {50, 30, 30} Degree Program: NETWORK.
-//    A3      First Name: Jack      Last Name: Napoli     Age: 19      daysInCourse: {20, 40, 40} Degree Program: SOFTWARE.
-//    A4      First Name: Erin      Last Name: Black     Age: 22      daysInCourse: {50, 58, 58} Degree Program: SECURITY.
-//    A5      First Name: Shuyi      Last Name: Huang     Age: 33      daysInCourse: {11, 3, 3} Degree Program: SOFTWARE.
-    cout << endl << "test remove(string studentID) function"<< endl;
-    cout << "attempt to remove student A2" << endl;
-    roster.remove("A2");
-    roster.printALL();
-    cout << "attempt to remove student A2 again and expect to have error message" << endl;
-    roster.remove("A2");
-    cout <<"attempt to delete student A6, expect to have error message" << endl;
-    roster.remove("A6");
+
+//    cout << endl << "test remove(string studentID) function"<< endl;
+//    cout << "attempt to remove student A2" << endl;
+//    roster.remove("A2");
+//    roster.printALL();
+//    cout << "attempt to remove student A2 again and expect to have error message" << endl;
+//    roster.remove("A2");
+//    cout <<"attempt to delete student A6, expect to have error message" << endl;
+//    roster.remove("A6");
+//    
+    cout << "test printAverageDaysInCourse(string studentID) fuction" << endl;
+    roster.printAverageDaysInCourse("A1"); 
+    
     
     return 0;
 }

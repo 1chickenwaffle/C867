@@ -69,6 +69,7 @@ void Roster::printALL(){
     for(int i = 0; i <numStudent; i++){
         classRosterArray[i]->print();
     }
+    cout << endl << endl;
 }
 
 void Roster::remove(string studentID){
@@ -79,13 +80,28 @@ void Roster::remove(string studentID){
         if(tempStudentID == studentID){
             studentExist = true;
             delete classRosterArray[studentIDnum-1];
-            cout <<"Student "<< studentID << " has been removed." << endl;
+            cout <<"Student "<< studentID << " has been removed." << endl << endl;
         }
     }
     if (!studentExist) {
-        cout << "error: Student  " << studentID << " is not found." << endl;
+        cout << "error: Student  " << studentID << " is not found." << endl<< endl;
     }
     
 };
+
+
+void Roster::printAverageDaysInCourse(string studentID){
+    for (int i = 0; i < numStudent; i++) {
+        if(studentID == classRosterArray[i]->getStudentID()){
+            int averageDay = (classRosterArray[i]->getDaysToCompleteEachCourse()[0] +
+                             classRosterArray[i]->getDaysToCompleteEachCourse()[1] +
+                             classRosterArray[i]->getDaysToCompleteEachCourse()[2])/ 3 ;
+            cout <<studentID << " spent average " << averageDay <<" days in the three courses. " << endl << endl;
+        }
+    }
+}
+
+//d.  public void printAverageDaysInCourse(string studentID)  that correctly prints a student’s average number of days in the three courses. The student is identified by the studentID parameter.
+//
 
 
