@@ -107,6 +107,7 @@ void Roster::printInvalidEmails(){
     for(int i = 0; i < numStudent; i++){
         string email = classRosterArray[i]->getEmailAddress();
         int periodCount = 0;
+        int atCount = 0;
         for (int j = 0; j < email.length(); j++) {
             char curChar = email[j]; //looping through each char in email
             
@@ -114,9 +115,13 @@ void Roster::printInvalidEmails(){
             bool isValidSpecialChar = (curChar == '.' || curChar == '@' || curChar == '_');
             bool isNum = (curChar >= '0' && curChar <= '9');
             
-            //count how many period in email, min = 1 to be valid
+            //count period in email
             if (curChar == '.') {
                 periodCount++;
+            }
+            //count @ in email
+            if (curChar == '@'){
+                atCount++;
             }
             
             // if email contain invalid character, it's not a valid email
@@ -125,18 +130,11 @@ void Roster::printInvalidEmails(){
                 break;
             }
             
-            //if email doesn't contain more than 1 period, it's not valid
-            if (j == (email.length() - 1) && periodCount < 1) {
+            //if email doesn't contain more than 1 period or has exactly 1 @, it's not valid
+            if (j == (email.length() - 1) && (periodCount < 1 || atCount != 1)) {
                 cout << email << " - is not a valid email. " << endl;
             }
         }
     }
 }
-
-
-//                cout << classRosterArray[i]->getStudentID() << classRosterArray[j]->getEmailAddress() << "is not a valid Email. The first character is not a letter" << endl;
-
-//find @
-//before add are either letter, number, _
-//find . from rhs
 
