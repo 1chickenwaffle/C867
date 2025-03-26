@@ -15,6 +15,7 @@ public:
     void printAverageDaysInCourse(string studentID);
     void printInvalidEmails();
     void printByDegreeProgram(DegreeProgram degreeProgram) ;
+    ~Roster();
 };
 
 

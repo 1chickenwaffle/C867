@@ -36,7 +36,8 @@ void Student::setStudentID(string studentID){
 }
 
 string Student::getStudentID(){
-    return StudentID;
+        return StudentID;
+    
 }
 
 void Student::setFirstname(string firstName){
