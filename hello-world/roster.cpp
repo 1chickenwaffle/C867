@@ -136,5 +136,16 @@ void Roster::printInvalidEmails(){
             }
         }
     }
+    cout << endl;
 }
 
+// public void printByDegreeProgram(DegreeProgram degreeProgram) that prints out student information for a degree program specified by an enumerated type.
+void Roster:: printByDegreeProgram(DegreeProgram degreeProgram){
+    cout << "The following student are studying: " << degreeProgramString[degreeProgram] << endl;
+    for (int i = 0; i <numStudent; i++) {
+        if (classRosterArray[i]->getDegreeProgram() == degreeProgram) {
+            classRosterArray[i]->print();
+        }
+        
+    }
+}

@@ -41,6 +41,7 @@ int main(){
     
     roster.printInvalidEmails();
     
+    roster.printByDegreeProgram(SECURITY);
     return 0;
 }
 

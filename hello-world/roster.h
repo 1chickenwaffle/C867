@@ -14,14 +14,8 @@ public:
     void remove(string studentID);
     void printAverageDaysInCourse(string studentID);
     void printInvalidEmails();
+    void printByDegreeProgram(DegreeProgram degreeProgram) ;
 };
 
 
-
-// 
-//
-//Note: A valid email should include an at sign ('@') and period ('.') and should not include a space (' ').
-// 
-//
-//f.  public void printByDegreeProgram(DegreeProgram degreeProgram) that prints out student information for a degree program specified by an enumerated type.
 
