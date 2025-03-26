@@ -67,7 +67,9 @@ void Roster::add(string studentID, string firstName, string lastName, string ema
 
 void Roster::printALL(){
     for(int i = 0; i <numStudent; i++){
-        classRosterArray[i]->print();
+        if (classRosterArray[i] != nullptr) {
+            classRosterArray[i]->print();
+        }
     }
     cout << endl << endl;
 }
@@ -76,17 +78,21 @@ void Roster::remove(string studentID){
     bool studentExist = false;
     int studentIDnum = stoi(studentID.substr(1,1)); // get the number after A in student ID
     for(int i = 0; i < numStudent; i++){
-        string tempStudentID = classRosterArray[i]->getStudentID();
-        if(tempStudentID == studentID){
-            studentExist = true;
-            delete classRosterArray[studentIDnum-1];
-            cout <<"Student "<< studentID << " has been removed." << endl << endl;
+        //check if pointing to valid address
+        if (classRosterArray[i] != nullptr) {
+            string tempStudentID = classRosterArray[i]->getStudentID();
+            if(studentID == tempStudentID){
+                studentExist = true;
+                delete classRosterArray[studentIDnum-1];
+                classRosterArray[studentIDnum-1] = nullptr;
+                cout <<"Student "<< studentID << " has been removed." << endl << endl;
+            }
+
         }
     }
     if (!studentExist) {
         cout << "error: Student  " << studentID << " is not found." << endl<< endl;
     }
-    
 };
 
 
@@ -96,7 +102,7 @@ void Roster::printAverageDaysInCourse(string studentID){
             int averageDay = (classRosterArray[i]->getDaysToCompleteEachCourse()[0] +
                              classRosterArray[i]->getDaysToCompleteEachCourse()[1] +
                              classRosterArray[i]->getDaysToCompleteEachCourse()[2])/ 3 ;
-            cout <<studentID << " spent average " << averageDay <<" days in the three courses. " << endl << endl;
+            cout <<studentID << " spent average " << averageDay <<" days in the three courses. " << endl;
         }
     }
 }
@@ -147,5 +153,15 @@ void Roster:: printByDegreeProgram(DegreeProgram degreeProgram){
             classRosterArray[i]->print();
         }
         
+    }
+}
+
+Roster::~Roster(){
+    cout << "---Constructor executed---" << endl;
+    for(int i = 0; i < numStudent; i++){
+        if (classRosterArray[i] != nullptr) {
+            delete classRosterArray[i];
+            classRosterArray[i] = nullptr;
+        }
     }
 }
