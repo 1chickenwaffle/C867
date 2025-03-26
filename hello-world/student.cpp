@@ -95,7 +95,7 @@ void Student::print(){
     cout << this->getStudentID() << " \t ";
     cout <<"First Name: "<< this->getFirstName() << " \t ";
     cout <<"Last Name: "<< this->getLastName() << "\t ";
-//cout <<"Age: "<< this->getEmailAddress() << " \t "; //requirement format doesn't say need to print out email
+    cout <<"Age: "<< this->getEmailAddress() << " \t "; //requirement format doesn't say need to print out email
     cout <<"Age: "<< this->getAge() << " \t ";
     int* daysArray = this->getDaysToCompleteEachCourse();
         cout <<"daysInCourse: {"
@@ -104,7 +104,6 @@ void Student::print(){
              << daysArray[2]
              << "} ";
     cout<<"Degree Program: " << degreeProgramString[this->degreeProgram] << "."<<endl;
-
 }
 
 

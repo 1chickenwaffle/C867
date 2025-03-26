@@ -100,8 +100,43 @@ void Roster::printAverageDaysInCourse(string studentID){
         }
     }
 }
+  
+void Roster::printInvalidEmails(){
+    
+    //loop through each student
+    for(int i = 0; i < numStudent; i++){
+        string email = classRosterArray[i]->getEmailAddress();
+        int periodCount = 0;
+        for (int j = 0; j < email.length(); j++) {
+            char curChar = email[j]; //looping through each char in email
+            
+            bool isChar = (curChar >= 'a' && curChar <= 'z') || (curChar >= 'A' && curChar <= 'Z');
+            bool isValidSpecialChar = (curChar == '.' || curChar == '@' || curChar == '_');
+            bool isNum = (curChar >= '0' && curChar <= '9');
+            
+            //count how many period in email, min = 1 to be valid
+            if (curChar == '.') {
+                periodCount++;
+            }
+            
+            // if email contain invalid character, it's not a valid email
+            if (!isChar && !isNum && !isValidSpecialChar) {
+                cout << email << " -  is not a valid email. " << endl;
+                break;
+            }
+            
+            //if email doesn't contain more than 1 period, it's not valid
+            if (j == (email.length() - 1) && periodCount < 1) {
+                cout << email << " - is not a valid email. " << endl;
+            }
+        }
+    }
+}
 
-//d.  public void printAverageDaysInCourse(string studentID)  that correctly prints a student’s average number of days in the three courses. The student is identified by the studentID parameter.
-//
 
+//                cout << classRosterArray[i]->getStudentID() << classRosterArray[j]->getEmailAddress() << "is not a valid Email. The first character is not a letter" << endl;
+
+//find @
+//before add are either letter, number, _
+//find . from rhs
 

@@ -13,11 +13,11 @@ public:
     void printALL();
     void remove(string studentID);
     void printAverageDaysInCourse(string studentID);
+    void printInvalidEmails();
 };
 
 
 
-//e.  public void printInvalidEmails() that verifies student email addresses and displays all invalid email addresses to the user.
 // 
 //
 //Note: A valid email should include an at sign ('@') and period ('.') and should not include a space (' ').

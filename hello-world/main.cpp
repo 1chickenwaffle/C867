@@ -39,6 +39,7 @@ int main(){
     cout << "test printAverageDaysInCourse(string studentID) fuction" << endl;
     roster.printAverageDaysInCourse("A1"); 
     
+    roster.printInvalidEmails();
     
     return 0;
 }
